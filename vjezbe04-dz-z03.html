@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosti Brojevi</title>
+</head>
+<body>
+
+<script>
+    // Funkcija koja provjerava je li broj prost
+    function jeProst(broj) {
+        if (broj <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(broj); i++) {
+            if (broj % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Funkcija koja ispisuje proste brojeve od 1 do 1000
+    function ispisiProsteBrojeve() {
+        const rezultatiElement = document.getElementById('rezultati');
+        for (let i = 1; i <= 1000; i++) {
+            if (jeProst(i)) {
+                console.log(i);
+                const paragraf = document.createElement('p');
+                paragraf.textContent = i;
+                rezultatiElement.appendChild(paragraf);
+            }
+        }
+    }
+
+    // Pozivanje funkcije prilikom učitavanja stranice
+    window.onload = ispisiProsteBrojeve;
+</script>
+
+<!-- Element u koji će biti prikazani rezultati -->
+<div id="rezultati"></div>
+
+</body>
+</html>

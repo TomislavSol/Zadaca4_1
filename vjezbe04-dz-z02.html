@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parni Brojevi i Kvadrati</title>
+</head>
+<body>
+
+<script>
+    // Funkcija koja ispisuje parne brojeve i njihove kvadrate u konzoli i HTML dokumentu
+    function ispisiParniIKvadrati() {
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                const kvadrat = i * i;
+                console.log(`Broj: ${i}, Kvadrat: ${kvadrat}`);
+
+                // Prikazivanje rezultata u HTML dokumentu
+                const rezultatiElement = document.getElementById('rezultati');
+                const paragraf = document.createElement('p');
+                paragraf.textContent = `Broj: ${i}, Kvadrat: ${kvadrat}`;
+                rezultatiElement.appendChild(paragraf);
+            }
+        }
+    }
+
+    // Pozivanje funkcije prilikom učitavanja stranice
+    window.onload = ispisiParniIKvadrati;
+</script>
+
+<!-- Element u koji će biti prikazani rezultati -->
+<div id="rezultati"></div>
+
+</body>
+</html>

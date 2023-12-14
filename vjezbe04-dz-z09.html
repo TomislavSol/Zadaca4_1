@@ -1,0 +1,23 @@
+function ispisSavrsenihBrojeva(doBroja) {
+    for (let i = 1; i <= doBroja; i++) {
+        if (jeSavrsenBroj(i)) {
+            console.log(i);
+        }
+    }
+}
+
+
+function jeSavrsenBroj(broj) {
+    let sumaDjelitelja = 0;
+
+    for (let j = 1; j < broj; j++) {
+        if (broj % j === 0) {
+            sumaDjelitelja += j;
+        }
+    }
+
+    return sumaDjelitelja === broj;
+}
+
+
+ispisSavrsenihBrojeva(10000);
